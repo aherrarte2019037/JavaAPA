@@ -11,6 +11,6 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Upload File" onAction="#onHelloButtonClick"/>
+    <Label fx:id="fileLabel" text="No file selected"/>
+    <Button fx:id="uploadButton" text="Upload File" onAction="#onFileUploadClick"/>
 </VBox>
