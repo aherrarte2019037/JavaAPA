@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.javaapa.javaapa.FileUploadController">
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.javaapa.javaapa.FileUploadController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="fileLabel" text="No file selected"/>
-    <Button fx:id="uploadButton" text="Upload File" onAction="#onFileUploadClick"/>
+    <HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml">
+        <VBox alignment="CENTER_LEFT" spacing="5.0" xmlns:fx="http://javafx.com/fxml">
+            <Label text="Title" />
+            <TextField fx:id="titleField" prefWidth="290.0"/>
+        </VBox>
+    </HBox>
+
+    <HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml">
+        <VBox alignment="CENTER_LEFT" spacing="5.0" xmlns:fx="http://javafx.com/fxml">
+            <Label text="URL" />
+            <TextField fx:id="urlField" prefWidth="290.0"/>
+        </VBox>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml">
+        <HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" xmlns:fx="http://javafx.com/fxml">
+                <Label text="Author" />
+                <TextField fx:id="authorField" prefWidth="140.0"/>
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" xmlns:fx="http://javafx.com/fxml">
+                <Label text="Website" />
+                <TextField fx:id="websiteField" prefWidth="140.0"/>
+            </VBox>
+        </HBox>
+    </HBox>
+
+    <HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml">
+        <VBox alignment="CENTER_LEFT" spacing="5.0" xmlns:fx="http://javafx.com/fxml">
+            <Label text="Publication Date"/>
+            <DatePicker fx:id="publicationDateField" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"/>
+        </VBox>
+    </HBox>
+
+
+    <Button fx:id="generateCiteButton" text="Generate Cite" onAction="#onGenerateCiteClick" />
 </VBox>

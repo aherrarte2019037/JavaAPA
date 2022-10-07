@@ -1,31 +1,57 @@
 package com.javaapa.javaapa;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.stage.FileChooser;
+import java.time.LocalDate;
 
-import java.io.File;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class FileUploadController {
     @FXML
-    private Label fileLabel;
+    private Button generateCiteButton;
 
     @FXML
-    private Button uploadButton;
-
-    private File file;
+    private TextField authorField;
 
     @FXML
-    protected void onFileUploadClick() {
-        fileLabel.setText("Uploading file...");
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Docx files", "*.docx");
+    private TextField titleField;
 
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(filter);
+    @FXML
+    private TextField websiteField;
 
-        file = fileChooser.showOpenDialog(uploadButton.getScene().getWindow());
+    @FXML
+    private TextField urlField;
 
-        fileLabel.setText(file != null ? file.getName() : "No file selected");
+    @FXML
+    private DatePicker publicationDateField;
+
+    @FXML
+    protected void onGenerateCiteClick() {
+        if (!validateForm()) {
+            return;
+        }
+
+        final String author = authorField.getText();
+        final String title = titleField.getText();
+        final String website = websiteField.getText();
+        final String url = urlField.getText();
+        final LocalDate publicationDate = publicationDateField.getValue();
+    }
+
+    protected boolean validateForm() {
+        if (authorField.getText().isBlank() || titleField.getText().isBlank() || websiteField.getText().isEmpty()
+                || urlField.getText().isBlank() || publicationDateField.getValue() == null) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setHeaderText("Generation failed");
+            alert.setContentText("Missing information");
+            alert.showAndWait();
+            return false;
+        }
+
+        return true;
     }
 }
