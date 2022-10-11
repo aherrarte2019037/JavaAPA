@@ -1,12 +1,11 @@
 module com.javaapa.javaapa {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.web;
+    requires static lombok;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires org.kordamp.ikonli.javafx;
-    requires org.kordamp.bootstrapfx.core;
-
-    opens com.javaapa.javaapa to javafx.fxml;
-    exports com.javaapa.javaapa;
+    opens com.javaapa to javafx.fxml;
+    opens com.javaapa.view;
+    opens com.javaapa.controller;
+    exports com.javaapa;
 }
