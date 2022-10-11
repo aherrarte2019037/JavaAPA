@@ -1,5 +1,6 @@
-package com.javaapa.javaapa;
+package com.javaapa;
 
+import com.javaapa.view.ViewFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,11 +11,9 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fileupload-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 854, 480);
-        stage.setTitle("APA GENERATOR");
-        stage.setScene(scene);
-        stage.show();
+
+        ViewFactory viewFactory = new ViewFactory();
+        viewFactory.showLoginWindow();
     }
 
     public static void main(String[] args) {
