@@ -1,3 +1,11 @@
+// DANIEL RAYO ROLDAN 22933
+// ANGEL HERRARTE 22873
+// IRVING MORALES 22781
+// BRANDON JOSEPH JUAREZ 22815
+// PROGRAM: Citehelper
+// PURPOSE: Is a desktop program made for construct cites based on APA guidelines.
+
+
 package com.javaapa;
 
 import com.javaapa.view.ViewFactory;
