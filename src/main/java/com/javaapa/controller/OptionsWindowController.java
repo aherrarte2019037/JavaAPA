@@ -1,6 +1,5 @@
 package com.javaapa.controller;
 
-import com.javaapa.controller.BaseController;
 import com.javaapa.view.ColorTheme;
 import com.javaapa.view.FontSize;
 import com.javaapa.view.ViewFactory;

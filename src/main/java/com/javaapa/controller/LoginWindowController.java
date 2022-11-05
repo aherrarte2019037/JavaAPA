@@ -1,7 +1,6 @@
 package com.javaapa.controller;
 
 import com.javaapa.view.ViewFactory;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
