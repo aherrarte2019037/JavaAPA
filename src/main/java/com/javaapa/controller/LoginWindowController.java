@@ -37,7 +37,7 @@ public class LoginWindowController extends BaseController {
         System.out.println("Mob psycho...");
         Stage stage = (Stage) errorLabel.getScene().getWindow();
         viewFactory.closeStage(stage);
-        viewFactory.showMainWindow();
+        //viewFactory.showMainWindow();
     }
 
 }
