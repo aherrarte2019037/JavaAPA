@@ -9,10 +9,10 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="567.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="567.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar layoutY="3.0" prefHeight="21.0" prefWidth="734.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <menus>
@@ -35,7 +35,7 @@
         </Menu>
       </menus>
     </MenuBar>
-    <Label fx:id="Bibliography" layoutX="120.0" layoutY="383.0" prefHeight="62.0" prefWidth="562.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="318.0" />
+    <Label fx:id="Bibliography" layoutX="120.0" layoutY="372.0" prefHeight="142.0" prefWidth="565.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="372.0" />
     <Label layoutX="26.0" layoutY="405.0" text="Cita" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="405.0" />
     <TextField fx:id="citeTitleTextBox" layoutX="123.0" layoutY="82.0" prefHeight="25.0" prefWidth="563.0" promptText="Don Quijote de la mancha" AnchorPane.bottomAnchor="464.0" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="82.0" />
     <Label layoutX="21.0" layoutY="88.0" prefHeight="18.0" prefWidth="49.0" text="Titulo" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="88.0" />
@@ -48,11 +48,11 @@
     <TextField fx:id="websiteTextBox" layoutX="123.0" layoutY="275.0" prefHeight="29.0" prefWidth="563.0" promptText="BibliotecasNacionales" AnchorPane.bottomAnchor="271.0" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="275.0" />
     <TextField fx:id="editorialTextBox" layoutX="122.0" layoutY="238.0" prefHeight="25.0" prefWidth="563.0" promptText="Editorial Papel" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="238.0" />
     <TextField fx:id="citeURLTextBox" layoutX="122.0" layoutY="324.0" prefHeight="29.0" prefWidth="563.0" promptText="bibliotecasnacionales.com" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="324.0" />
-    <VBox layoutX="320.0" layoutY="454.0" spacing="10" alignment="bottom_center">
+    <VBox alignment="bottom_center" layoutX="320.0" layoutY="454.0" spacing="10">
       <Button mnemonicParsing="false" onAction="#GenerateCiteButton" text="Generar" AnchorPane.bottomAnchor="11.252844767076397" AnchorPane.rightAnchor="118.5056895341528" />
       <Label fx:id="exportMessageLbl" text="Cite exported succesfully!" />
-      <HBox layoutX="360.0" layoutY="454.0" spacing="10" alignment="CENTER">
-        <Button mnemonicParsing="false" fx:id="exportCiteBtn" onAction="#ExportCiteButton" text="Exportar" AnchorPane.bottomAnchor="11.252844767076397" AnchorPane.rightAnchor="22.163607443617593" />
+      <HBox alignment="CENTER" layoutX="360.0" layoutY="454.0" spacing="10">
+        <Button fx:id="exportCiteBtn" mnemonicParsing="false" onAction="#ExportCiteButton" text="Exportar" AnchorPane.bottomAnchor="11.252844767076397" AnchorPane.rightAnchor="22.163607443617593" />
         <CheckBox fx:id="openFolderCbx" text="Open folder" />
       </HBox>
     </VBox>

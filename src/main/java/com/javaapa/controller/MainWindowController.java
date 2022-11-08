@@ -1,6 +1,7 @@
 package com.javaapa.controller;
 
 import com.javaapa.App;
+import com.javaapa.Model.CiteFormatter;
 import com.javaapa.view.ViewFactory;
 
 import javafx.event.ActionEvent;
@@ -19,8 +20,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 /**
@@ -79,16 +78,18 @@ public class MainWindowController extends BaseController implements Initializabl
      */
     @FXML
     void optionsAction(ActionEvent event) {
-        System.out.println("Mob psycho...");
         viewFactory.showOptionsWindow();
     }
 
     @FXML
     void getDate(ActionEvent event) {
-        LocalDate myDate = datePicker.getValue();
-        String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
+    /**
+     * Handles logic for exporting generated cites to
+     * an external txt file.
+     * @param event Event
+     */
     @FXML
     void ExportCiteButton(ActionEvent event) {
         Node source = (Node) event.getSource();
@@ -113,6 +114,11 @@ public class MainWindowController extends BaseController implements Initializabl
         exportMessageLbl.setManaged(true);
     }
 
+    /**
+     * Hangles logic for generate cites with the data
+     * enter by the user.
+     * @param event
+     */
     @FXML
     void GenerateCiteButton(ActionEvent event) {
         String generatedCite = GenerateCite();
@@ -128,37 +134,26 @@ public class MainWindowController extends BaseController implements Initializabl
         exportMessageLbl.setManaged(false);
     }
 
-    String GenerateCite() {
-        String articleTitle = citeTitleTextBox.getText();
-        String articleAuthors = getAuthors(citeAuthorTextBox.getText().split(";"));
-        String articleDate = datePicker.getValue().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        String articleEditorial = editorialTextBox.getText();
-        String articleURL = citeURLTextBox.getText();
-        return String.format(
-                "%s.(%s).%s.%s.%s",
-                articleAuthors, articleDate, articleTitle, articleEditorial, articleURL);
+    /**
+     * Retrieve values input by the user and return the
+     * bibliography cite as String.
+     * @return APA cite.
+     */
+    private String GenerateCite() {
+        CiteFormatter citeFormatter = new CiteFormatter()
+                .authors(citeAuthorTextBox.getText().split(";"))
+                .date(datePicker.getValue())
+                .title(citeTitleTextBox.getText())
+                .editorial(editorialTextBox.getText())
+                .url(citeURLTextBox.getText());
+        return citeFormatter.getCite();
     }
 
-    String getAuthors(String... authors) {
-        if (authors.length == 1 && authors[0] == "")
-            return "Anónimo";
-
-        String message = "";
-
-        for (String author : authors) {
-            message += getAuthorFragment(author) + " ";
-        }
-
-        return message;
-    }
-
-    String getAuthorFragment(String author) {
-        String[] names = author.split(" ");
-        if (names.length == 1)
-            return names[0];
-        return names[1] + ", " + names[0].charAt(0);
-    }
-
+    /**
+     * Saves the cite within CiteLabel to a .txt file.
+     * @param content
+     * @param file
+     */
     private void saveTextToFile(String content, File file) {
         try {
             PrintWriter writer;
