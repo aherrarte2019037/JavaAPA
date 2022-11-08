@@ -28,7 +28,8 @@ public class App extends Application {
     public void start(Stage stage) {
         Host = getHostServices();
         ViewFactory viewFactory = new ViewFactory();
-        viewFactory.showLoginWindow();
+        viewFactory.showMainWindow();
+        viewFactory.updateStyles();
     }
 
     /**
