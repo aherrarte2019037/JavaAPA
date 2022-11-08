@@ -53,11 +53,6 @@ public class ViewFactory {
      */
 
     /**
-     * Creates Options Window for changin UI Fontsize and colorTheme.
-     */
-
-
-    /**
      * Show a given Stage (window).
      * @param parent Window to be show.
      */
@@ -94,7 +89,6 @@ public class ViewFactory {
      * @return The parent for the given controller.
      */
     private Parent FXMLload(BaseController controller){
-        System.out.println("asd;lkfjasdfkl");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(controller.getFxmlName()));
         fxmlLoader.setController(controller);
         Parent parent;

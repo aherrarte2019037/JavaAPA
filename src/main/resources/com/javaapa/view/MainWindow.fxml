@@ -1,47 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="506.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <MenuBar layoutY="3.0" prefHeight="21.0" prefWidth="734.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-                  <MenuItem mnemonicParsing="false" text="Open" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#optionsAction" text="Options" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Label fx:id="Bibliography" layoutX="119.0" layoutY="399.0" prefHeight="80.0" prefWidth="562.0" AnchorPane.bottomAnchor="26.790029827155806" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="54.8617923719836" AnchorPane.topAnchor="399.0" />
-      <Label layoutX="26.0" layoutY="430.0" text="Cita" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="430.0" />
-      <TextField fx:id="citeTitleTextBox" layoutX="119.0" layoutY="84.0" prefHeight="25.0" prefWidth="562.0" AnchorPane.bottomAnchor="396.6001761119327" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="57.8617923719836" AnchorPane.topAnchor="84.0" />
-      <Label layoutX="21.0" layoutY="88.0" prefHeight="18.0" prefWidth="49.0" text="Titulo" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="88.0" />
-      <Label layoutX="25.0" layoutY="132.0" text="Autores" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="132.0" />
-      <Label layoutX="20.0" layoutY="191.0" text="Fecha de&#10;Publicacion" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="191.0" />
-      <Label layoutX="24.0" layoutY="243.0" text="Editorial" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="243.0" />
-      <Label layoutX="31.0" layoutY="330.0" text="URL" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="330.0" />
-      <Label layoutX="25.0" layoutY="272.0" text="Nombre del&#10;sitio web" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="272.0" />
-      <TextField fx:id="citeAuthorTextBox" layoutX="118.0" layoutY="128.0" prefHeight="25.0" prefWidth="562.0" AnchorPane.bottomAnchor="352.6001761119327" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="57.8617923719836" AnchorPane.topAnchor="128.0" />
-      <TextField fx:id="citeDatePublishedTextBox" layoutX="121.0" layoutY="196.0" prefHeight="25.0" prefWidth="562.0" AnchorPane.bottomAnchor="284.6001761119327" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="54.8617923719836" AnchorPane.topAnchor="196.0" />
-      <TextField fx:id="citeEditorialTextBox" layoutX="120.0" layoutY="239.0" prefHeight="25.0" prefWidth="562.0" AnchorPane.bottomAnchor="241.60017611193268" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="54.8617923719836" AnchorPane.topAnchor="239.0" />
-      <TextField fx:id="citeWebPageTextBox" layoutX="120.0" layoutY="277.0" prefHeight="25.0" prefWidth="562.0" AnchorPane.bottomAnchor="203.60017611193268" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="56.8617923719836" AnchorPane.topAnchor="277.0" />
-      <TextField fx:id="citeURLTextBox" layoutX="117.0" layoutY="326.0" prefHeight="25.0" prefWidth="562.0" AnchorPane.bottomAnchor="154.60017611193268" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="56.8617923719836" AnchorPane.topAnchor="326.0" />
-   </children>
+<AnchorPane prefHeight="567.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar layoutY="3.0" prefHeight="21.0" prefWidth="734.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Archivo">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Cerrar" />
+            <MenuItem mnemonicParsing="false" text="Abrir" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Editar">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#optionsAction" text="Apariencia" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Ayuda">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+            <MenuItem mnemonicParsing="false" text="Normas APA" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <Label fx:id="Bibliography" layoutX="120.0" layoutY="383.0" prefHeight="62.0" prefWidth="562.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="318.0" />
+    <Label layoutX="26.0" layoutY="405.0" text="Cita" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="405.0" />
+    <TextField fx:id="citeTitleTextBox" layoutX="123.0" layoutY="82.0" prefHeight="25.0" prefWidth="563.0" promptText="Don Quijote de la mancha" AnchorPane.bottomAnchor="464.0" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="82.0" />
+    <Label layoutX="21.0" layoutY="88.0" prefHeight="18.0" prefWidth="49.0" text="Titulo" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="88.0" />
+    <Label layoutX="25.0" layoutY="132.0" text="Autores" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="132.0" />
+    <Label layoutX="20.0" layoutY="191.0" text="Fecha de&#10;Publicacion" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="191.0" />
+    <Label layoutX="24.0" layoutY="243.0" text="Editorial" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="243.0" />
+    <Label layoutX="31.0" layoutY="330.0" text="URL" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="330.0" />
+    <Label layoutX="25.0" layoutY="272.0" text="Nombre del&#10;sitio web" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="272.0" />
+    <TextField fx:id="citeAuthorTextBox" layoutX="122.0" layoutY="123.0" prefHeight="25.0" prefWidth="563.0" promptText="Miguel Cervantes; Julio Verne (separa los autores por &quot;;&quot;)" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="123.0" />
+    <TextField fx:id="websiteTextBox" layoutX="123.0" layoutY="275.0" prefHeight="29.0" prefWidth="563.0" promptText="BibliotecasNacionales" AnchorPane.bottomAnchor="271.0" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="275.0" />
+    <TextField fx:id="editorialTextBox" layoutX="122.0" layoutY="238.0" prefHeight="25.0" prefWidth="563.0" promptText="Editorial Papel" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="238.0" />
+    <TextField fx:id="citeURLTextBox" layoutX="122.0" layoutY="324.0" prefHeight="29.0" prefWidth="563.0" promptText="bibliotecasnacionales.com" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="324.0" />
+    <VBox layoutX="320.0" layoutY="454.0" spacing="10" alignment="bottom_center">
+      <Button mnemonicParsing="false" onAction="#GenerateCiteButton" text="Generar" AnchorPane.bottomAnchor="11.252844767076397" AnchorPane.rightAnchor="118.5056895341528" />
+      <Label fx:id="exportMessageLbl" text="Cite exported succesfully!" />
+      <HBox layoutX="360.0" layoutY="454.0" spacing="10" alignment="CENTER">
+        <Button mnemonicParsing="false" fx:id="exportCiteBtn" onAction="#ExportCiteButton" text="Exportar" AnchorPane.bottomAnchor="11.252844767076397" AnchorPane.rightAnchor="22.163607443617593" />
+        <CheckBox fx:id="openFolderCbx" text="Open folder" />
+      </HBox>
+    </VBox>
+    <DatePicker fx:id="datePicker" layoutX="122.0" layoutY="196.0" onAction="#getDate" />
+  </children>
 </AnchorPane>

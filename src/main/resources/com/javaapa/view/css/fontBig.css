@@ -1,0 +1,19 @@
+.big{
+    fx-font-size: 17pt;
+}
+
+Button, Label, ChoiceBox, Slider, TextField, .menu-button{
+    -fx-font-size: 13pt;
+}
+
+Slider .axis {
+    -fx-font-size: 13pt;
+}
+
+.text-field {
+    -fx-font-size: 13pt;
+}
+
+.text-field:focus {
+    -fx-font-size: 13pt;
+}
