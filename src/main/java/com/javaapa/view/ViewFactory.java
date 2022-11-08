@@ -2,8 +2,6 @@ package com.javaapa.view;
 
 import com.javaapa.controller.BaseController;
 import com.javaapa.controller.LoginWindowController;
-import com.javaapa.controller.MainWindowController;
-import com.javaapa.controller.OptionsWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -53,24 +51,6 @@ public class ViewFactory {
     /**
      * Creates a Main Window.
      */
-    public void showMainWindow(){
-        System.out.println("Show main Window");
-
-        BaseController controller = new MainWindowController(this, "MainWindow.fxml");
-        Parent parent = FXMLload(controller);
-        show(parent);
-    }
-
-    /**
-     * Creates Options Window for changin UI Fontsize and colorTheme.
-     */
-    public void showOptionsWindow(){
-        System.out.println("Show main Window");
-
-        BaseController controller = new OptionsWindowController( this, "OptionsWindow.fxml");
-        Parent parent = FXMLload(controller);
-        show(parent);
-    }
 
     /**
      * Show a given Stage (window).
