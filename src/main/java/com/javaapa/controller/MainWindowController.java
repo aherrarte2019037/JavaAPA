@@ -4,6 +4,7 @@ import com.javaapa.App;
 import com.javaapa.Model.CiteFormatter;
 import com.javaapa.view.ViewFactory;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +15,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 import java.io.File;
 import java.io.IOException;
@@ -78,6 +80,12 @@ public class MainWindowController extends BaseController implements Initializabl
     @FXML
     void optionsAction(ActionEvent event) {
         viewFactory.showOptionsWindow();
+    }
+
+    @FXML
+    void exitAction(ActionEvent event) {
+        Stage stage = (Stage) exportCiteBtn.getScene().getWindow();
+        viewFactory.closeStage(stage);
     }
 
     @FXML

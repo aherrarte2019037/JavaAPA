@@ -19,6 +19,13 @@ import java.util.ResourceBundle;
  */
 public class OptionsWindowController extends BaseController implements Initializable {
 
+    @FXML
+    private Slider fontSizePicker;
+
+    @FXML
+    private ChoiceBox<ColorTheme> themePicker;
+
+
     /**
      * @param viewFactory Reference to the view factory which manages this window.
      * @param fxmlName FXML file path
@@ -44,7 +51,7 @@ public class OptionsWindowController extends BaseController implements Initializ
     private void setUpFontSizePicker() {
         fontSizePicker.setMin(0);
         fontSizePicker.setMax(FontSize.values().length - 1);
-        fontSizePicker.setValue(viewFactory.getFontSize().ordinal());
+        fontSizePicker.setValue(viewFactory.getCurrentFontSize().ordinal());
         fontSizePicker.setMajorTickUnit(1);
         fontSizePicker.setMinorTickCount(0);
         fontSizePicker.setBlockIncrement(1);
@@ -55,7 +62,7 @@ public class OptionsWindowController extends BaseController implements Initializ
             @Override
             public String toString(Double object) {
                 int i = object.intValue();
-                return FontSize.values()[i].toString();
+                return FontSize.values()[i].getName();
             }
 
             @Override
@@ -73,14 +80,8 @@ public class OptionsWindowController extends BaseController implements Initializ
      */
     private void setUpThemePicker() {
         themePicker.setItems(FXCollections.observableArrayList(ColorTheme.values()));
-        themePicker.setValue(viewFactory.getColorTheme());
+        themePicker.setValue(viewFactory.getCurrentColorTheme());
     }
-
-    @FXML
-    private Slider fontSizePicker;
-
-    @FXML
-    private ChoiceBox<ColorTheme> themePicker;
 
     /**
      * Handles the applyButton button Logic. By setting the ViewFactory
@@ -88,11 +89,11 @@ public class OptionsWindowController extends BaseController implements Initializ
      */
     @FXML
     void applyButtonAction() {
-        viewFactory.setColorTheme(themePicker.getValue());
-        viewFactory.setFontSize(FontSize.values()[(int)(fontSizePicker.getValue())]);
-        viewFactory.updateStyles();
-        System.out.println(viewFactory.getColorTheme());
-        System.out.println(viewFactory.getFontSize());
+        viewFactory.setCurrentColorTheme(themePicker.getValue());
+        viewFactory.setCurrentFontSize(FontSize.values()[(int)(fontSizePicker.getValue())]);
+        viewFactory.updateActiveScenesStyles();
+        System.out.println(viewFactory.getCurrentColorTheme());
+        System.out.println(viewFactory.getCurrentFontSize());
     }
 
     /**

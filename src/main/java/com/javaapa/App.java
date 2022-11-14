@@ -29,7 +29,7 @@ public class App extends Application {
         Host = getHostServices();
         ViewFactory viewFactory = new ViewFactory();
         viewFactory.showMainWindow();
-        viewFactory.updateStyles();
+        viewFactory.updateActiveScenesStyles();
     }
 
     /**
