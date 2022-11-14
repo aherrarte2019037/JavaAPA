@@ -29,8 +29,8 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Ayuda">
           <items>
-            <MenuItem mnemonicParsing="false" text="About" />
-            <MenuItem mnemonicParsing="false" text="Normas APA" />
+            <MenuItem onAction="#onAboutClick" mnemonicParsing="false" text="About" />
+            <MenuItem onAction="#onRulesClick" mnemonicParsing="false" text="Normas APA" />
           </items>
         </Menu>
       </menus>

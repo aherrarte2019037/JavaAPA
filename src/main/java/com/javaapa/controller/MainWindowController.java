@@ -15,7 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -162,5 +161,15 @@ public class MainWindowController extends BaseController implements Initializabl
             writer.close();
         } catch (IOException ex) {
         }
+    }
+
+    @FXML
+    protected void onRulesClick() {
+        App.Host.showDocument("https://normasapa.in/");
+    }
+
+    @FXML
+    protected void onAboutClick() {
+        App.Host.showDocument("https://normas-apa.org/introduccion/que-son-las-normas-apa/");
     }
 }
