@@ -27,9 +27,9 @@ public class ViewFactory {
     // View options handling
 
     /**Current stages colortheme*/
-    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private ColorTheme currentColorTheme = ColorTheme.DEFAULT;
     /**Current stages fontSize*/
-    private FontSize fontSize = FontSize.MEDIUM;
+    private FontSize currentFontSize = FontSize.MEDIUM;
 
     /**
      * Constructor
@@ -74,13 +74,25 @@ public class ViewFactory {
     }
 
     /**
-     * Changes CSS styles.
+     * Changes CSS styles of all scenes within {@link #activeStages activeStages}.
      */
-    public void updateStyles(){
+    public void updateActiveScenesStyles(){
         for (Stage stage: activeStages) {
             Scene scene = stage.getScene();
-            // handle CSS
+            updateStyle(scene);
         }
+    }
+
+    /**
+     * Changes de color theme and font size of a given scene
+     * acordding to the current fontsize and color theme
+     * defined in the fields of this class.
+     * @param scene
+     */
+    private void updateStyle(Scene scene){
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource(this.currentFontSize.getCssFile()).toExternalForm());
+        scene.getStylesheets().add(getClass().getResource(this.currentColorTheme.getCssFile()).toExternalForm());
     }
 
     /**
