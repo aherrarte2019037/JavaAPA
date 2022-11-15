@@ -25,7 +25,7 @@ public class CiteFormatter {
         String message = "";
 
         for(int i=0; i < authors.length; i++){
-            if(i == authors.length - 1)
+            if(i == authors.length - 1 && authors.length != 1)
                 message += " & " + getAuthorFragment(authors[i]);
             else
                 message += ", " + getAuthorFragment(authors[i]);
@@ -54,18 +54,42 @@ public class CiteFormatter {
         return outputDate;
     }
 
+    private String removeDuplicateChars(String cite, Character... charactersToRemove){
+        StringBuilder formattedCite = new StringBuilder("");
+        for(int i=0; i < cite.length(); i++){
+            try{
+                Character currentCharacter = cite.charAt(i);
+                Character nextCharacter = cite.charAt(i+1);
+                if(currentCharacter.equals(nextCharacter) && containsValue(charactersToRemove, currentCharacter))
+                    formattedCite.append("");
+                else
+                    formattedCite.append(currentCharacter);
+            }
+            catch (IndexOutOfBoundsException e){}
+        }
+        return formattedCite.toString();
+    }
+
+    private <T> boolean containsValue(T[] array, T value){
+        for (T currentValue: array)
+            if(currentValue.equals(value))
+                return true;
+        return false;
+    }
+
     /* ====================
             PUBLIC API
        ====================*/
 
     public String getCite(){
-        return String.format(
+        String cite =  String.format(
                 "%s.(%s).%s.%s.%s",
                 this.authors,
                 this.date,
                 this.title ,
                 this.editorial,
                 this.url);
+        return removeDuplicateChars(cite, '.', ',');
     }
 
     public CiteFormatter title(String title){
