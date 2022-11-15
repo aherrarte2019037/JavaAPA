@@ -1,0 +1,9 @@
+To run this project some sofware must have been already installed:
+    - JavaFX 19
+    - Java JDK 11
+    - Maven
+
+Run this project by unziping the JavaAPA.zip file
+Then run the following command on terminal:
+
+    ./JavaAPA/bin/launch

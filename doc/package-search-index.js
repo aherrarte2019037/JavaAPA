@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"com.javaapa.javaapa","l":"com.javaapa"},{"m":"com.javaapa.javaapa","l":"com.javaapa.controller"},{"m":"com.javaapa.javaapa","l":"com.javaapa.view"}]
